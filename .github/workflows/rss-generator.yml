@@ -1,41 +1,15 @@
-name: Generar RSS diario
+name: Actualizar RSS
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Cada día a medianoche UTC
-  workflow_dispatch:      # Permite ejecutar manualmente
+    - cron: '0 0 * * *'  # Esto corre una vez al día a medianoche UTC
+  workflow_dispatch:      # Permite ejecutar manualmente también
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # Fuerza Node.js 24
-
     steps:
-      - name: Clonar repositorio
+      - name: Check out repo
         uses: actions/checkout@v3
-
-      - name: Configurar Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Instalar dependencias
-        run: pip install requests beautifulsoup4
-
-      - name: Ejecutar script generate_rss.py
-        run: python generate_rss.py
-
-      - name: Crear Pull Request con archivo generado
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Actualizar rss_generated.xml"
-          branch: update-rss-xml
-          title: "Actualizar rss_generated.xml automáticamente"
-          body: "Este PR fue generado automáticamente por GitHub Actions"
-          base: main
-          path: .   # Detecta rss_generated.xml dentro de toda la raíz
-
-      - name: Mostrar archivo generado
-        run: ls -l
+      - name: Mensaje de prueba
+        run: echo "GitHub Actions configurado correctamente"
