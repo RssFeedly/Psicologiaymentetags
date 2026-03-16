@@ -4,23 +4,10 @@ from datetime import datetime
 import xml.etree.ElementTree as ET
 
 urls = [
-    "https://lamenteesmaravillosa.com/neurociencias/",
-    "https://lamenteesmaravillosa.com/trabajo/",
-    "https://psicologiaymente.com/categoria/drogas",
-    "https://psicologiaymente.com/categoria/personalidad",
-    "https://psicologiaymente.com/categoria/organizaciones",
-    "https://psicologiaymente.com/categoria/neurociencias",
-    "https://psicologiaymente.com/categoria/forense",
-    "https://psicologiaymente.com/categoria/desarrollo",
-    "https://psicologiaymente.com/categoria/psicofarmacologia",
-    "https://psicologiaymente.com/categoria/consumidor",
-    "https://psicologiaymente.com/categoria/inteligencia",
     "https://psicologiaymente.com/tags/historia-de-la-psicologia",
     "https://psicologiaymente.com/tags/narcisismo",
     "https://psicologiaymente.com/tags/teoria",
     "https://psicologiaymente.com/tags/depresion",
-    "https://psicologiaymente.com/marketing",
-    "https://www.psicologia-online.com/pir/",
     "https://psicologiaymente.com/tags/terapia",
     "https://psicologiaymente.com/tags/emocion"
 ]
